@@ -35,7 +35,7 @@ def dfs(groups, week=0):
     return False
 
 # Vendosni W dhe N sipas nevojave të projektit tuaj
-W = 10
+W = 9
 N = 32
 
 initial_groups = [None] * W
