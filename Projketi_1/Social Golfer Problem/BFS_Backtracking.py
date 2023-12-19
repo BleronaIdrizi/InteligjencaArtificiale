@@ -21,17 +21,17 @@ def bfs():
 
         # Generate all possible combinations of groups for this week
         for group_combination in combinations(range(N), 4):
-            new_groups = list(current_groups)  # Copy the current state
+            new_groups = list(current_groups) 
             
             # Check if this combination is valid with all previous weeks
             if all(valid_group(group_combination, new_groups, w) for w in range(week)):
-                new_groups[week] = [group_combination]  # Set this group for the current week
-                queue.append((new_groups, week + 1))  # Add new state to the queue
+                new_groups[week] = [group_combination]  
+                queue.append((new_groups, week + 1))  
 
-    return None  # If the queue is empty and we haven't returned, there is no solution
+    return None  
 
-# Vendosni W dhe N sipas nevojave të projektit tuaj
-W = 5  # Numri i javëve që dëshironi të planifikoni
+# Vendosja e W dhe N sipas nevojave të projektit
+W = 2  # Numri i javëve që dëshirojme të planifikojme
 N = 32  # Numri total i lojtarëve
 
 result = bfs()
@@ -41,9 +41,9 @@ def print_solution(groups):
         print(f"Week {week + 1}:", end=" ")
         for group in week_groups:
             print(",".join(str(player) for player in group), end=" | ")
-        print()  # Print a newline at the end of each week
+        print() 
 
-# Pasi të keni gjetur zgjidhjen:
+# Zgjidhja:
 if result:
     print_solution(result)
 else:

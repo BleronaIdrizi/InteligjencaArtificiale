@@ -3,14 +3,14 @@ from itertools import combinations
 def generate_possible_groups(existing_groups, week):
     players = set(range(N))  # N është numri total i lojtarëve
 
-    # Hiqni lojtarët që tashmë janë caktuar në grupe në javët e mëparshme
+    # Largojme lojtarët që tashmë janë caktuar në grupe në javët e mëparshme
     for w in range(week):
         week_groups = existing_groups[w]
-        if week_groups is not None:  # Sigurohuni që ka grupe për këtë javë
+        if week_groups is not None:  # Sigurohemi që ka grupe për këtë javë
             for group in week_groups:
                 players.difference_update(group)
 
-    # Krijo të gjitha kombinimet e mundshme të grupeve prej 4 lojtarësh nga lojtarët e mbetur
+    # Krijojme të gjitha kombinimet e mundshme të grupeve prej 4 lojtarësh nga lojtarët e mbetur
     for group_combination in combinations(players, 4):
         yield group_combination
 
@@ -27,14 +27,14 @@ def dfs(groups, week=0):
         return True
     for group in generate_possible_groups(groups, week):
         if valid_group(group, groups, week):
-            groups[week] = [group]  # Sigurohuni që ky është një listë e grupeve
+            groups[week] = [group]  # Sigurohemi që kjo është një listë e grupeve
             if dfs(groups, week + 1):
                 return True
             # Backtracking
             groups[week] = None
     return False
 
-# Vendosni W dhe N sipas nevojave të projektit tuaj
+# Vendosja e W dhe N sipas nevojave të projektit
 W = 9
 N = 32
 
@@ -48,7 +48,7 @@ def print_solution(groups):
             print(",".join(str(player) for player in group), end=" | ")
         print()  # Print a newline at the end of each week
 
-# Pasi të keni gjetur zgjidhjen:
+# Zgjidhja:
 if result:
     print_solution(initial_groups)
 else:
