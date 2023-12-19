@@ -1,52 +1,50 @@
+from itertools import combinations
 from collections import deque
 
-def bfs(graph, start):
-    visited = {node: False for node in graph}
-    queue = deque([start])
-    visited[start] = True
+def valid_group(new_group, existing_groups, week):
+    for w in range(week):
+        for existing_group in existing_groups[w]:
+            if existing_group is not None and len(set(new_group).intersection(existing_group)) > 1:
+                return False
+    return True
+
+def bfs():
+    # Start with an empty list of groups for each week
+    initial_state = [None] * W
+    queue = deque([(initial_state, 0)])  # Start the queue with the initial state and week 0
 
     while queue:
-        current = queue.popleft()
-        print(current, end=" ")
+        current_groups, week = queue.popleft()  # Get the current state and week
 
-        for neighbor in graph[current]:
-            if not visited[neighbor]:
-                queue.append(neighbor)
-                visited[neighbor] = True
+        if week == W:  # If we've filled all weeks, return the solution
+            return current_groups
 
-# Për të testuar BFS:
-graph_bfs = {
-    1: [2, 3],
-    2: [1, 4, 5],
-    3: [1, 6],
-    4: [2],
-    5: [2],
-    6: [3]
-}
-start_node_bfs = 1
-print("\nBFS:")
-bfs(graph_bfs, start_node_bfs)
+        # Generate all possible combinations of groups for this week
+        for group_combination in combinations(range(N), 4):
+            new_groups = list(current_groups)  # Copy the current state
+            
+            # Check if this combination is valid with all previous weeks
+            if all(valid_group(group_combination, new_groups, w) for w in range(week)):
+                new_groups[week] = [group_combination]  # Set this group for the current week
+                queue.append((new_groups, week + 1))  # Add new state to the queue
 
-def is_valid(candidate):
-    # Kjo është një funksion i imagjinar që vlerëson validitetin e një zgjidhjeje të mundshme
-    # Për shembull, nëse keni një problemin që kërkon një zgjidhje të ndaluar, këtu do të vendosni logjikën e validitetit.
+    return None  # If the queue is empty and we haven't returned, there is no solution
 
-    # Për shembull, një zgjidhje është e vlefshme nëse nuk përmban dy elemente të njëjtë.
+# Vendosni W dhe N sipas nevojave të projektit tuaj
+W = 5  # Numri i javëve që dëshironi të planifikoni
+N = 32  # Numri total i lojtarëve
 
-    return len(set(candidate)) == len(candidate)
+result = bfs()
 
-def backtracking(problem_space, solution=[]):
-    if len(solution) == len(problem_space):
-        # Nëse kemi gjetur një zgjidhje të mundshme, printo rezultatin
-        print(solution)
-        return
+def print_solution(groups):
+    for week, week_groups in enumerate(groups):
+        print(f"Week {week + 1}:", end=" ")
+        for group in week_groups:
+            print(",".join(str(player) for player in group), end=" | ")
+        print()  # Print a newline at the end of each week
 
-    for candidate in problem_space:
-        if is_valid(solution + [candidate]):
-            # Shto kandidatin në zgjidhje dhe vazhdo kërkimin me zgjidhjen e re
-            backtracking(problem_space, solution + [candidate])
-
-# Për të testuar Backtracking:
-problem_space_backtracking = [1, 2, 3, 4]
-print("\nBacktracking:")
-backtracking(problem_space_backtracking)
+# Pasi të keni gjetur zgjidhjen:
+if result:
+    print_solution(result)
+else:
+    print("Nuk u gjet zgjidhje.")
