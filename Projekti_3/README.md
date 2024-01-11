@@ -8,7 +8,7 @@ Ky projekt synon të zgjidhë sfidat e orarizimit në universitete teknika të a
 
 ## Startimi i projektit
 1. Se pari bëni instalimin e python-it në pajisjen e juaj.
-2. Klonimi i projektit:  **[Timetable Optimisation Project Workbook](https://github.com/BleronaIdrizi/InteligjencaArtificiale.git)**.
+2. Klonimi i projektit:  **[InteligjencaArtificiale](https://github.com/BleronaIdrizi/InteligjencaArtificiale.git)**.
 3. Ekzekutimi i komandës për instalimin e librarive në direktoriumin ku është i vendosur projekti:
 ```python
 cd Projekti_3
