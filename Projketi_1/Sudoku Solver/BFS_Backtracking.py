@@ -28,7 +28,7 @@ def solve_sudoku_bfs(board):
         for num in range(1, 10):  # Provon të vendosë çdo numër të mundshëm në qelinë.
             new_board = [row[:] for row in curr_board]  # Krijon një kopje të tabelës për çdo mundësi.
             if is_valid(new_board, i, j, num):
-                new_board[i][j] = num  # Vendos numrin në qeli nëse është e ligjshme.
+                new_board[i][j] = num  # Vendos numrin në qeli nëse është e ligjshme. - backtraching
                 queue.append(new_board)  # Shton tabelën e re në radhë për tu kontrolluar më tej.
     return None  # Kthehet None nëse nuk gjendet ndonjë zgjidhje.
 
@@ -71,7 +71,7 @@ solved = solve_sudoku_bfs(sudoku_board_bfs)
 if solved:
     # Printon tabelën e zgjidhur nëse zgjidhja u gjet
     print("\n ------------- Sudoku i zgjidhur -------------\n")
-    print_sudoku_formatted(sudoku_board_bfs)
+    print_sudoku_formatted(solved)
 else:
     # Printon një mesazh nëse nuk ka zgjidhje
     print("Nuk ka zgjidhje.")

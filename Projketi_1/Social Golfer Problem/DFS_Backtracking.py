@@ -35,10 +35,10 @@ def dfs(groups, week=0):
     return False
 
 # Vendosja e W dhe N sipas nevojave të projektit
-W = 9
+W = 1
 N = 32
 
-initial_groups = [None] * W
+initial_groups = [None] * 1
 result = dfs(initial_groups)
 
 def print_solution(groups):

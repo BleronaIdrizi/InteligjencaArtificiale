@@ -10,7 +10,7 @@ def solve_sudoku_dfs(board):
     # Përpjeket të zgjidhë Sudoku-n përmes Depth First Search dhe Backtracking
     for i in range(9):
         for j in range(9):
-            if board[i][j] == 0:  # Kontrollon nëse qelia është e zbrazët
+            if board[i][j] == 0:  # Kontrollon nëse qelia është e zbrazët - backtracking
                 for num in range(1, 10):  # Provon çdo numër nga 1 deri në 9
                     if is_valid(board, i, j, num):  # Kontrollon nëse numri është i ligjshëm
                         board[i][j] = num  # Vendos numrin në qeli
