@@ -1,0 +1,14 @@
+C:\Users\vlorasht\Desktop\n-queen-a-star-master\NqueenSolver\bin\Debug\NqueenSolver.exe.config
+C:\Users\vlorasht\Desktop\n-queen-a-star-master\NqueenSolver\bin\Debug\NqueenSolver.exe
+C:\Users\vlorasht\Desktop\n-queen-a-star-master\NqueenSolver\bin\Debug\NqueenSolver.pdb
+C:\Users\vlorasht\Desktop\n-queen-a-star-master\NqueenSolver\obj\Debug\NqueenSolver.csproj.AssemblyReference.cache
+C:\Users\vlorasht\Desktop\n-queen-a-star-master\NqueenSolver\obj\Debug\NqueenSolver.Board.resources
+C:\Users\vlorasht\Desktop\n-queen-a-star-master\NqueenSolver\obj\Debug\NqueenSolver.Main.resources
+C:\Users\vlorasht\Desktop\n-queen-a-star-master\NqueenSolver\obj\Debug\NqueenSolver.Properties.Resources.resources
+C:\Users\vlorasht\Desktop\n-queen-a-star-master\NqueenSolver\obj\Debug\NqueenSolver.csproj.GenerateResource.cache
+C:\Users\vlorasht\Desktop\n-queen-a-star-master\NqueenSolver\obj\Debug\NqueenSolver.csproj.CoreCompileInputs.cache
+C:\Users\vlorasht\Desktop\n-queen-a-star-master\NqueenSolver\obj\Debug\NqueenSolver.exe
+C:\Users\vlorasht\Desktop\n-queen-a-star-master\NqueenSolver\obj\Debug\NqueenSolver.pdb
+C:\Users\vlorasht\Desktop\Master23-24\InteligjencaArtificiale\Projekti_2\N_Queens_A_star\NqueenSolver\obj\Debug\NqueenSolver.csproj.AssemblyReference.cache
+C:\Users\vlorasht\Desktop\Master23-24\InteligjencaArtificiale\Projekti_2\N_Queens_A_star\NqueenSolver\obj\Debug\NqueenSolver.exe
+C:\Users\vlorasht\Desktop\Master23-24\InteligjencaArtificiale\Projekti_2\N_Queens_A_star\NqueenSolver\obj\Debug\NqueenSolver.pdb
