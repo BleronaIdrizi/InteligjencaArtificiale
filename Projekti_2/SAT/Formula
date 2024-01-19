@@ -1,0 +1,26 @@
+
+Përshkrimi dhe zgjidhja e problemit të ahengut me formulën SAT:
+
+Përkufizimi i variablave:
+- Për çdo mysafir Mi (1 <= i <= 100) dhe çdo tavolinë Tj (1 <= j <= 10), ne përdorim variablen booleane x_ij.
+- x_ij është e vërtetë (1) nëse mysafiri Mi ulët në tavolinën Tj, dhe e rreme (0) në të kundërt.
+
+Kushtet e formulës:
+1. Çdo mysafir duhet të ulet në saktësisht një tavolinë:
+   ∧_{i=1}^{100} ( ∨_{j=1}^{10} x_{ij} ) ∧ ∧_{i=1}^{100} ∧_{j=1}^{9} ∧_{k=j+1}^{10} (¬x_{ij} ∨ ¬x_{ik})
+
+2. Kushti i mos-uljes së bashku (për mysafirët që nuk mund të ulen së bashku):
+   Për çdo çift të ndaluar (Mi, Mk) dhe çdo tavolinë Tj:
+   ∧_{j=1}^{10} (¬x_{ij} ∨ ¬x_{kj})
+
+3. Kushti i uljes së bashku (për mysafirët që duhet të ulen së bashku):
+   Për çdo çift që duhet të ulet së bashku (Mi, Mk) dhe çdo tavolinë Tj:
+   ∧_{j=1}^{10} (x_{ij} ↔ x_{kj})
+
+Në këtë formulim:
+- ∧ përfaqëson AND logjik
+- ∨ përfaqëson OR logjik
+- ↔ përfaqëson ekuivalencën logjike
+- ¬ përfaqëson MOS logjik
+
+Zgjidhja e kësaj formule do të japë një shpërndarje të mysafirëve nëpër tavolina që plotëson të gjitha kushtet e dhëna.
